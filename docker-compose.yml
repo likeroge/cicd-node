@@ -4,9 +4,6 @@ services:
   app1:
     image: node
     container_name: cicd-express
-    networks:
-      - vps-nginx-conf_app_network
-      # - app_network
     ports:
       - "5005:5005"
     volumes:
