@@ -14,12 +14,6 @@ jobs:
     steps:
       - name: Checkout21
         uses: actions/checkout@v2
-      # - name: Setup Node
-        # uses: actions/setup-node@v1
-        # with:
-          # node-version: 18
-      # - run: npm install
-      # - run: npm run build
   deploy:
     needs: build
     runs-on: ubuntu-latest
@@ -31,4 +25,4 @@ jobs:
         with:
           ssh-private-key: ${{ secrets.AUTH_SSH }}
       - name: Deploy to VPS
-        run: ssh -o StrictHostKeyChecking=no egor@185.250.44.151 'cd dev/cicd-node && git pull' 
+        run: ssh -o StrictHostKeyChecking=no egor@185.250.44.151 'cd dev/cicd-node && git pull && docker-compose pull && docker-compose up -d' 
