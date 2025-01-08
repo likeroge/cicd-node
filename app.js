@@ -10,7 +10,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/posts", async (req, res) => {
-  const { data: posts } = axios.get(
+  const { data: posts } = await axios.get(
     "https://jsonplaceholder.typicode.com/posts",
   );
   res.status(200).send(posts);
