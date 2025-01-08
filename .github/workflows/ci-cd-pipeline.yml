@@ -27,4 +27,4 @@ jobs:
       - name: Deploy to VPS
         run: | 
           # ssh -o StrictHostKeyChecking=no egor@185.250.44.151 'cd dev/cicd-node && git pull && docker-compose up -d'
-          ssh -o StrictHostKeyChecking=no egor@185.250.44.151 'cd dev/cicd-node && git pull && docker-compose up -d --build'
+          ssh -o StrictHostKeyChecking=no egor@185.250.44.151 'cd dev/cicd-node && git pull && docker compose pull && docker-compose up -d'
