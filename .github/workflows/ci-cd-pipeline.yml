@@ -12,7 +12,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout21
+      - name: Checkout2
         uses: actions/checkout@v2
   deploy:
     needs: build
@@ -27,4 +27,4 @@ jobs:
       - name: Deploy to VPS
         run: | 
           # ssh -o StrictHostKeyChecking=no egor@185.250.44.151 'cd dev/cicd-node && git pull && docker-compose up -d'
-          ssh -o StrictHostKeyChecking=no egor@185.250.44.151 'cd dev/cicd-node && git pull && docker compose pull && docker-compose up -d --build'
+          ssh -o StrictHostKeyChecking=no egor@185.250.44.151 'cd dev/cicd-node && git pull && docker compose pull && docker-compose down &&  docker-compose up -d --build'
