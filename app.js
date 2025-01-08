@@ -20,7 +20,10 @@ app.get("/posts", async (req, res) => {
   }
 });
 
-app.get("/users", (req, res) => {
+app.get("/users", async (req, res) => {
+  const { data: users } = await axios.get(
+    "https://jsonplaceholder.typicode.com/users",
+  );
   res.status(200).send(users);
 });
 
