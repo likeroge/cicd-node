@@ -25,6 +25,5 @@ jobs:
         with:
           ssh-private-key: ${{ secrets.AUTH_SSH }}
       - name: Deploy to VPS
-        # run: ssh -o StrictHostKeyChecking=no egor@185.250.44.151 'cd dev/cicd-node && git pull && docker-compose pull && docker-compose up -d' 
         run: | 
           ssh -o StrictHostKeyChecking=no egor@185.250.44.151 'cd dev/cicd-node && git pull && docker-compose up -d'
