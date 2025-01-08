@@ -2,6 +2,7 @@ version: '3.8'
 
 services:
   app:
+    image: node
     container_name: cicd-express
     ports:
       - "5005:5005"
