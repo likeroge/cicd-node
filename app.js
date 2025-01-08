@@ -24,6 +24,7 @@ app.get("/users", async (req, res) => {
   const { data: users } = await axios.get(
     "https://jsonplaceholder.typicode.com/users",
   );
+  console.log(users);
   res.status(200).send(users);
 });
 
